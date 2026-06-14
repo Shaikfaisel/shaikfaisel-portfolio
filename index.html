@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shaik Faisel Ahmed | Electronics &amp; Full Stack Engineer</title>
+  <meta name="description" content="Portfolio of Shaik Faisel Ahmed — ECE Graduate, VLSI & Embedded Systems Engineer, Full Stack Developer, BCI Researcher. Based in Bengaluru, India." />
+  <meta property="og:title"       content="Shaik Faisel Ahmed | Engineer Portfolio" />
+  <meta property="og:description" content="ECE Engineer passionate about hardware-software convergence. VLSI, PCB Design, IoT, Flask, React." />
+  <meta property="og:type"        content="website" />
+  <meta name="keywords" content="Shaik Faisel Ahmed, VLSI Engineer, Embedded Systems, PCB Design, Full Stack Developer, Flask, Brain Computer Interface, ECE Portfolio Bengaluru" />
+
+  <!-- Google Fonts — Inter (body text) and JetBrains Mono (code/labels) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <!-- All CSS is in this separate file -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+
+<!-- ============================================================
+     SCROLL PROGRESS BAR
+     Thin colored line at the very top that fills as you scroll.
+     Width is controlled by JavaScript in main.js.
+============================================================ -->
+<div id="progress-bar"></div>
+
+
+<!-- ============================================================
+     NAVBAR — Fixed at top of page
+============================================================ -->
+<nav>
+  <div class="nav-inner">
+
+    <!-- Logo text -->
+    <div class="nav-logo">ECE.Developer</div>
+
+    <!-- Desktop navigation links -->
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#achievements">Achievements</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <div class="nav-right">
+      <!-- Dark/light toggle — JavaScript in main.js handles the click -->
+      <button id="theme-toggle" title="Toggle theme">☀️</button>
+      <!-- Hamburger icon — only visible on mobile -->
+      <button class="hamburger" id="hamburger" aria-label="Open menu">☰</button>
+    </div>
+
+  </div>
+
+  <!-- Mobile dropdown — hidden by default, shown when hamburger is clicked -->
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#about"        onclick="closeMobileMenu()">About</a>
+    <a href="#education"    onclick="closeMobileMenu()">Education</a>
+    <a href="#skills"       onclick="closeMobileMenu()">Skills</a>
+    <a href="#experience"   onclick="closeMobileMenu()">Experience</a>
+    <a href="#projects"     onclick="closeMobileMenu()">Projects</a>
+    <a href="#achievements" onclick="closeMobileMenu()">Achievements</a>
+    <a href="#contact"      onclick="closeMobileMenu()">Contact</a>
+  </div>
+</nav>
+
+
+<!-- ============================================================
+     HERO SECTION — First thing visitors see
+============================================================ -->
+<section id="hero">
+  <!-- Background decorations (gradient blobs + grid lines) -->
+  <div class="hero-bg"></div>
+  <div class="grid-bg"></div>
+
+  <div class="hero-content">
+
+    <!-- LEFT SIDE — Name, typing text, buttons, social icons -->
+    <div>
+      <div class="hero-eyebrow">Available for opportunities</div>
+
+      <h1 class="hero-name">
+        Shaik<br />
+        <span class="highlight">Faisel Ahmed</span>
+      </h1>
+
+      <!-- This text is animated by JavaScript — it types and deletes role titles -->
+      <div id="typing-text"></div>
+
+      <p class="hero-desc">
+        ECE Engineer who bridges hardware and software — from Verilog circuits
+        and PCB design to Flask backends and BCI-powered ML systems.
+      </p>
+
+      <div class="hero-btns">
+        <!-- Resume PDF must be in the same folder as index.html -->
+        <a href="Shaik Faisel resume.pdf" download class="btn-primary">⬇ Download Resume</a>
+        <a href="#projects" class="btn-outline">🚀 View Projects</a>
+        <a href="#contact"  class="btn-outline">📬 Contact Me</a>
+      </div>
+
+      <!-- Social icon links -->
+      <div class="hero-socials">
+        <a href="https://www.linkedin.com/in/shaik-faisel-ahmed-06150a316/" target="_blank" title="LinkedIn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/>
+            <circle cx="4" cy="4" r="2"/>
+          </svg>
+        </a>
+        <a href="https://github.com/Shaikfaisel" target="_blank" title="GitHub">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/>
+          </svg>
+        </a>
+        <a href="mailto:shaikfaisel129@gmail.com" title="Email">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+        </a>
+        <a href="tel:+918217310699" title="Phone">📞</a>
+      </div>
+    </div>
+
+    <!-- RIGHT SIDE — Profile card with photo and stats -->
+    <div class="hero-card">
+      <div class="avatar-ring">
+        <div class="avatar-inner">
+          <!-- Your photo — must be named photo.jpeg and in the same folder -->
+          <img src="photo.jpeg" alt="Shaik Faisel Ahmed" />
+        </div>
+      </div>
+      <div class="hero-card-name">Shaik Faisel Ahmed</div>
+      <div class="hero-card-role">ECE '25 · HKBK College (VTU)</div>
+
+      <!-- Stats — the numbers count up from 0 via JavaScript -->
+      <div class="stat-row">
+        <div class="stat-item">
+          <div class="stat-num" data-target="3">0</div>
+          <div class="stat-label">Internships</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num" data-target="2">0</div>
+          <div class="stat-label">Projects</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num" data-target="92">0</div>
+          <div class="stat-label">% BCI Acc.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ============================================================
+     ABOUT SECTION
+============================================================ -->
+<section id="about">
+  <div class="container">
+    <div class="section-eyebrow">// who I am</div>
+    <h2 class="section-title">About Me</h2>
+    <div class="section-line"></div>
+
+    <div class="about-grid fade-in">
+      <!-- Left: paragraphs + highlight boxes -->
+      <div class="about-text">
+        <p>
+          I'm an Electronics &amp; Communication Engineering graduate (VTU, 2025) with a unique
+          appetite for working at the intersection of hardware and software. Most engineers pick
+          a lane — I deliberately didn't.
+        </p>
+        <p>
+          My hands-on experience spans VLSI design and Verilog circuit simulation at Rooman
+          Technologies, four-layer PCB design for EV electronics at Dassault Systems, and
+          full-stack development at C-DAC Bengaluru — three very different engineering contexts
+          in under two years.
+        </p>
+        <p>
+          My flagship academic project, a Brain-Computer Interface for epilepsy detection, won
+          the <strong>Best Major Project Award</strong> from the Karnataka State Council for
+          Science &amp; Technology. It achieved 92% accuracy by fusing biosignal hardware with
+          ML pipelines — exactly the kind of problem I'm drawn to.
+        </p>
+        <p>
+          I'm actively looking for roles in embedded systems, hardware engineering, or full-stack
+          development where real technical depth is valued over checkbox skills.
+        </p>
+
+        <div class="available-badge">Open to Work · Bengaluru &amp; Remote</div>
+
+        <div class="about-highlights" style="margin-top:24px;">
+          <div class="highlight-item">
+            <div class="icon">🔬</div>
+            <strong>Hardware Depth</strong>
+            <span>VLSI, PCB, Verilog/VHDL, Embedded IoT</span>
+          </div>
+          <div class="highlight-item">
+            <div class="icon">💻</div>
+            <strong>Software Breadth</strong>
+            <span>Flask, React, OpenCV, MySQL, Python</span>
+          </div>
+          <div class="highlight-item">
+            <div class="icon">🧠</div>
+            <strong>Research</strong>
+            <span>BCI systems, ML-based medical diagnostics</span>
+          </div>
+          <div class="highlight-item">
+            <div class="icon">🏆</div>
+            <strong>Award Winner</strong>
+            <span>Karnataka State Council for S&amp;T — SPP Award</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: info table -->
+      <div>
+        <div class="about-info">
+          <div class="info-row"><span class="label">Name</span>      <span class="val">Shaik Faisel Ahmed</span></div>
+          <div class="info-row"><span class="label">Degree</span>    <span class="val">B.E. Electronics &amp; Communication</span></div>
+          <div class="info-row"><span class="label">University</span><span class="val">Visvesvaraya Technological University (VTU)</span></div>
+          <div class="info-row"><span class="label">Graduated</span> <span class="val">2025</span></div>
+          <div class="info-row"><span class="label">CGPA</span>      <span class="val">6.76 / 10</span></div>
+          <div class="info-row"><span class="label">Location</span>  <span class="val">Bengaluru, Karnataka, India</span></div>
+          <div class="info-row">
+            <span class="label">LinkedIn</span>
+            <span class="val">
+              <a href="https://www.linkedin.com/in/shaik-faisel-ahmed-06150a316/" style="color:var(--accent2)">LinkedIn.com</a>
+            </span>
+          </div>
+          <div class="info-row"><span class="label">Phone</span>     <span class="val">+91 82173 10699</span></div>
+          <div class="info-row"><span class="label">Languages</span> <span class="val">English · Hindi · Urdu · Kannada</span></div>
+          <div class="info-row">
+            <span class="label">GitHub</span>
+            <span class="val">
+              <a href="https://github.com/Shaikfaisel" target="_blank" style="color:var(--accent2)">GitHub.com</a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ============================================================
+     EDUCATION SECTION
+============================================================ -->
+<section id="education">
+  <div class="container">
+    <div class="section-eyebrow">// academic background</div>
+    <h2 class="section-title">Education</h2>
+    <div class="section-line"></div>
+
+    <div class="timeline fade-in">
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-year">2021 – 2025</div>
+          <div class="timeline-degree">B.E. — Electronics &amp; Communication Engineering</div>
+          <div class="timeline-school">HKBK College of Engineering, Bengaluru · Visvesvaraya Technological University (VTU)</div>
+          <span class="cgpa-badge">CGPA: 6.76</span>
+          <p style="font-size:0.84rem;color:var(--muted);margin-top:12px;">
+            Relevant coursework: Digital Electronics, VLSI Design, Embedded Systems,
+            Signals &amp; Systems, Microprocessors, PCB Design, IoT, Python for Engineers.
+          </p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-year">2019 – 2021</div>
+          <div class="timeline-degree">PUC — Science Stream (Physics, Chemistry, Mathematics, Electronics)</div>
+          <div class="timeline-school">Maharashtra State Board</div>
+          <span class="cgpa-badge">81%</span>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-year">2018 – 2019</div>
+          <div class="timeline-degree">SSLC — Secondary School Leaving Certificate</div>
+          <div class="timeline-school">Karnataka State Board</div>
+          <span class="cgpa-badge">60%</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SKILLS SECTION
+============================================================ -->
+<section id="skills">
+  <div class="container">
+    <div class="section-eyebrow">// what I work with</div>
+    <h2 class="section-title">Technical Skills</h2>
+    <div class="section-line"></div>
+
+    <div class="skills-grid fade-in">
+
+      <div class="skill-category">
+        <div class="skill-category-title">⚡ Hardware &amp; Electronics</div>
+        <div class="skill-tags">
+          <span class="skill-tag green">VLSI Design</span>
+          <span class="skill-tag green">PCB Design</span>
+          <span class="skill-tag green">Embedded Systems</span>
+          <span class="skill-tag green">IoT</span>
+          <span class="skill-tag green">Digital Electronics</span>
+          <span class="skill-tag green">Analog Electronics</span>
+          <span class="skill-tag green">Verilog</span>
+          <span class="skill-tag green">VHDL</span>
+        </div>
+      </div>
+
+      <div class="skill-category">
+        <div class="skill-category-title">💻 Programming Languages</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">C</span>
+          <span class="skill-tag">C++</span>
+          <span class="skill-tag">JavaScript</span>
+          <span class="skill-tag">SQL</span>
+        </div>
+      </div>
+
+      <div class="skill-category">
+        <div class="skill-category-title">🌐 Web Development</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Flask</span>
+          <span class="skill-tag">React.js</span>
+          <span class="skill-tag">HTML5</span>
+          <span class="skill-tag">CSS3</span>
+          <span class="skill-tag">JavaScript</span>
+          <span class="skill-tag">MySQL</span>
+        </div>
+      </div>
+
+      <div class="skill-category">
+        <div class="skill-category-title">🧠 AI / ML</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Machine Learning</span>
+          <span class="skill-tag">OpenCV</span>
+          <span class="skill-tag">Signal Processing</span>
+          <span class="skill-tag">Scikit-learn</span>
+          <span class="skill-tag">Firebase</span>
+        </div>
+      </div>
+
+      <div class="skill-category">
+        <div class="skill-category-title">🛠 Tools &amp; Software</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Git &amp; GitHub</span>
+          <span class="skill-tag">MATLAB</span>
+          <span class="skill-tag">Multisim</span>
+          <span class="skill-tag">DELMIA</span>
+          <span class="skill-tag">VS Code</span>
+          <span class="skill-tag">Linux</span>
+        </div>
+      </div>
+
+      <div class="skill-category">
+        <div class="skill-category-title">📋 Productivity</div>
+        <div class="skill-tags">
+          <span class="skill-tag">MS Office Suite</span>
+          <span class="skill-tag">PowerPoint</span>
+          <span class="skill-tag">Excel</span>
+          <span class="skill-tag">Canva</span>
+          <span class="skill-tag">Agile / Scrum</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     EXPERIENCE SECTION
+============================================================ -->
+<section id="experience">
+  <div class="container">
+    <div class="section-eyebrow">// where I've worked</div>
+    <h2 class="section-title">Experience</h2>
+    <div class="section-line"></div>
+
+    <div class="exp-grid fade-in">
+
+      <!-- C-DAC -->
+      <div class="exp-card">
+        <div class="exp-logo">🖥</div>
+        <div>
+          <div class="exp-company">C-DAC Bengaluru</div>
+          <div class="exp-role">Full Stack Development Intern</div>
+          <div class="exp-date">April 2025 – June 2025 · Bengaluru, India</div>
+          <ul class="exp-bullets">
+            <li>Built a secure Online Voting System using Flask, OpenCV, and MySQL — achieving 98% accurate face-recognition authentication with real-time result dashboards.</li>
+            <li>Refactored backend SQL queries to cut vote-processing time by 40% and reduce code redundancy by 30% via modular design.</li>
+            <li>Collaborated in an Agile team of six: sprint planning, peer code reviews, and version control with Git.</li>
+          </ul>
+          <div class="exp-tech-row">
+            <span class="tech-chip">Flask</span>
+            <span class="tech-chip">OpenCV</span>
+            <span class="tech-chip">MySQL</span>
+            <span class="tech-chip">Python</span>
+            <span class="tech-chip">JavaScript</span>
+            <span class="tech-chip">Git</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Rooman Technologies -->
+      <div class="exp-card">
+        <div class="exp-logo">🔧</div>
+        <div>
+          <div class="exp-company">Rooman Technologies</div>
+          <div class="exp-role">VLSI Design Engineer Intern</div>
+          <div class="exp-date">September 2024 – March 2025 · Bengaluru, India</div>
+          <ul class="exp-bullets">
+            <li>Designed and simulated 10+ digital circuits using Verilog/VHDL — achieving 100% functional verification and 98% timing accuracy.</li>
+            <li>Supported layout design and floor planning for VLSI modules, optimizing chip area by 12% and reducing power usage by 10%.</li>
+            <li>Implemented a low-power ALU through clock-gating and operand-isolation, yielding a 15% reduction in dynamic power consumption.</li>
+          </ul>
+          <div class="exp-tech-row">
+            <span class="tech-chip">Verilog</span>
+            <span class="tech-chip">VHDL</span>
+            <span class="tech-chip">VLSI</span>
+            <span class="tech-chip">Floor Planning</span>
+            <span class="tech-chip">Timing Analysis</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dassault Systèmes -->
+      <div class="exp-card">
+        <div class="exp-logo">✈️</div>
+        <div>
+          <div class="exp-company">Dassault Systèmes</div>
+          <div class="exp-role">Systems Engineer Intern</div>
+          <div class="exp-date">June 2023 – July 2024 · Bengaluru, India</div>
+          <ul class="exp-bullets">
+            <li>Developed and validated a four-layer PCB for EV electronics using DELMIA, enhancing circuit stability by 20% and minimizing signal interference.</li>
+            <li>Contributed to system integration and circuit optimization, boosting EV performance and reliability by 15%.</li>
+          </ul>
+          <div class="exp-tech-row">
+            <span class="tech-chip">PCB Design</span>
+            <span class="tech-chip">DELMIA</span>
+            <span class="tech-chip">EV Systems</span>
+            <span class="tech-chip">Circuit Optimization</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     PROJECTS SECTION
+============================================================ -->
+<section id="projects">
+  <div class="container">
+    <div class="section-eyebrow">// what I've built</div>
+    <h2 class="section-title">Projects</h2>
+    <div class="section-line"></div>
+
+    <div class="projects-grid fade-in">
+
+      <!-- Project 1: BCI -->
+      <div class="project-card featured">
+        <div class="project-header">
+          <div class="project-icon">🧠</div>
+          <span class="featured-badge">⭐ Featured</span>
+        </div>
+        <div class="project-body">
+          <div class="project-title">Early-Stage Neurological Disorder Detection via BCI</div>
+          <p class="project-desc">
+            Brain-Computer Interface system integrating biosignal acquisition hardware with ML
+            algorithms for early epilepsy detection. Awarded Best Major Project by Karnataka
+            State Council for Science &amp; Technology.
+          </p>
+          <div class="project-metrics">
+            <div class="metric"><div class="metric-val">92%</div><div class="metric-label">Detection Accuracy</div></div>
+            <div class="metric"><div class="metric-val">35%</div><div class="metric-label">Latency Reduced</div></div>
+          </div>
+          <div class="project-tags">
+            <span class="skill-tag green">Python</span>
+            <span class="skill-tag">Machine Learning</span>
+            <span class="skill-tag">Firebase</span>
+            <span class="skill-tag">Signal Processing</span>
+            <span class="skill-tag">BCI Hardware</span>
+          </div>
+          <div class="project-footer">
+            <a href="https://github.com/Shaikfaisel/BCI-Epilepsy-Monitoring-System" target="_blank" class="btn-sm primary">⬡ GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2: Voting System -->
+      <div class="project-card">
+        <div class="project-header">
+          <div class="project-icon">🗳</div>
+        </div>
+        <div class="project-body">
+          <div class="project-title">Online Voting System with Face Recognition</div>
+          <p class="project-desc">
+            Secure web-based voting platform using real-time facial authentication. Features
+            live result dashboards and admin controls. Built during C-DAC internship and
+            extended for open release.
+          </p>
+          <div class="project-metrics">
+            <div class="metric"><div class="metric-val">98%</div><div class="metric-label">Face Auth Accuracy</div></div>
+            <div class="metric"><div class="metric-val">40%</div><div class="metric-label">Processing Speed ↑</div></div>
+          </div>
+          <div class="project-tags">
+            <span class="skill-tag">Flask</span>
+            <span class="skill-tag">OpenCV</span>
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">MySQL</span>
+            <span class="skill-tag">HTML/CSS</span>
+          </div>
+          <div class="project-footer">
+            <a href="https://github.com/Shaikfaisel/Online_Voting_System" target="_blank" class="btn-sm primary">⬡ GitHub</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     GITHUB ACTIVITY SECTION
+============================================================ -->
+<section id="github">
+  <div class="container">
+    <div class="section-eyebrow">// open source footprint</div>
+    <h2 class="section-title">GitHub Activity</h2>
+    <div class="section-line"></div>
+
+    <div class="github-stats fade-in">
+      <div class="gh-stat-card">
+        <div class="gh-stat-icon">📁</div>
+        <div class="gh-stat-num">3</div>
+        <div class="gh-stat-label">Repositories</div>
+      </div>
+      <div class="gh-stat-card">
+        <div class="gh-stat-icon">⭐</div>
+        <div class="gh-stat-num">3</div>
+        <div class="gh-stat-label">Total Stars</div>
+      </div>
+      <div class="gh-stat-card">
+        <div class="gh-stat-icon">🌿</div>
+        <div class="gh-stat-num">4</div>
+        <div class="gh-stat-label">Following</div>
+      </div>
+      <div class="gh-stat-card">
+        <div class="gh-stat-icon">🐍</div>
+        <div class="gh-stat-num">Python</div>
+        <div class="gh-stat-label">Top Language</div>
+      </div>
+    </div>
+
+    <!-- Decorative contribution grid — colored squares, like GitHub profile -->
+    <div class="contrib-section fade-in">
+      <div class="contrib-title">Contribution Graph (illustrative)</div>
+      <!-- JavaScript in main.js fills this div with colored squares -->
+      <div class="contrib-grid" id="contrib-grid"></div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ============================================================
+     ACHIEVEMENTS SECTION
+============================================================ -->
+<section id="achievements" style="background:var(--bg2);">
+  <div class="container">
+    <div class="section-eyebrow">// recognition</div>
+    <h2 class="section-title">Achievements</h2>
+    <div class="section-line"></div>
+
+    <div class="achievements-grid fade-in">
+
+      <div class="ach-card gold">
+        <div class="ach-icon">🏆</div>
+        <div class="ach-title">Best Major Project Award (SPP)</div>
+        <div class="ach-org">Karnataka State Council for Science &amp; Technology</div>
+        <div class="ach-date">September 2025</div>
+        <p style="font-size:0.83rem;color:var(--muted);margin-top:10px;">
+          Awarded for the Brain-Computer Interface epilepsy detection project —
+          recognising excellence in applied research bridging hardware and machine learning.
+        </p>
+      </div>
+
+      <div class="ach-card">
+        <div class="ach-icon">🎓</div>
+        <div class="ach-title">B.E. Electronics &amp; Communication — Graduated</div>
+        <div class="ach-org">HKBK College of Engineering · VTU</div>
+        <div class="ach-date">2025</div>
+        <p style="font-size:0.83rem;color:var(--muted);margin-top:10px;">
+          Completed 4-year program with specialisation in VLSI, PCB Design,
+          Embedded Systems, and Digital Signal Processing.
+        </p>
+      </div>
+
+      <div class="ach-card">
+        <div class="ach-icon">🤝</div>
+        <div class="ach-title">Multi-Domain Internship Track</div>
+        <div class="ach-org">Dassault Systèmes · Rooman Technologies · C-DAC</div>
+        <div class="ach-date">2023 – 2025</div>
+        <p style="font-size:0.83rem;color:var(--muted);margin-top:10px;">
+          Three distinct internships across EDA, VLSI, and full-stack —
+          rare breadth for a fresh ECE graduate.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     CERTIFICATIONS SECTION
+============================================================ -->
+<section id="certifications">
+  <div class="container">
+    <div class="section-eyebrow">// credentials</div>
+    <h2 class="section-title">Certifications</h2>
+    <div class="section-line"></div>
+
+    <div class="certs-grid fade-in">
+
+      <div class="cert-card">
+        <div class="cert-icon">💻</div>
+        <div>
+          <div class="cert-name">Full Stack Web Development</div>
+          <div class="cert-org">C-DAC Bengaluru</div>
+          <div class="cert-date">2025</div>
+        </div>
+      </div>
+
+      <div class="cert-card">
+        <div class="cert-icon">🔧</div>
+        <div>
+          <div class="cert-name">VLSI Design Engineering</div>
+          <div class="cert-org">Rooman Technologies</div>
+          <div class="cert-date">2025</div>
+        </div>
+      </div>
+
+      <div class="cert-card">
+        <div class="cert-icon">✈️</div>
+        <div>
+          <div class="cert-name">Systems Engineering (PCB / EV)</div>
+          <div class="cert-org">Dassault Systèmes</div>
+          <div class="cert-date">2024</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     CONTACT SECTION
+     The form submits to Formspree — see main.js for the endpoint.
+     You must set up a free Formspree account and paste your endpoint
+     URL into main.js before this form will send emails.
+============================================================ -->
+<section id="contact">
+  <div class="container">
+    <div class="section-eyebrow">// get in touch</div>
+    <h2 class="section-title">Contact</h2>
+    <div class="section-line"></div>
+
+    <div class="contact-grid fade-in">
+
+      <!-- LEFT: contact info links -->
+      <div class="contact-info">
+        <p>
+          I'm actively looking for roles in hardware engineering, embedded systems, VLSI,
+          or full-stack development. If you have something interesting, let's talk.
+        </p>
+        <div class="contact-links">
+          <a href="mailto:shaikfaisel129@gmail.com" class="contact-link-item">
+            <div class="link-icon">📧</div>
+            <div>
+              <div class="link-label">Email</div>
+              <div class="link-val">shaikfaisel129@gmail.com</div>
+            </div>
+          </a>
+          <a href="tel:+918217310699" class="contact-link-item">
+            <div class="link-icon">📞</div>
+            <div>
+              <div class="link-label">Phone</div>
+              <div class="link-val">+91 82173 10699</div>
+            </div>
+          </a>
+          <a href="https://www.linkedin.com/in/shaik-faisel-ahmed-06150a316/" target="_blank" class="contact-link-item">
+            <div class="link-icon">💼</div>
+            <div>
+              <div class="link-label">LinkedIn</div>
+              <div class="link-val">shaik-faisel-ahmed</div>
+            </div>
+          </a>
+          <a href="https://github.com/Shaikfaisel" target="_blank" class="contact-link-item">
+            <div class="link-icon">⬡</div>
+            <div>
+              <div class="link-label">GitHub</div>
+              <div class="link-val">Shaikfaisel</div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- RIGHT: contact form -->
+      <!-- id="contact-form" is what main.js listens to for the submit event -->
+      <form class="contact-form" id="contact-form" novalidate>
+        <div class="form-group">
+          <label for="f-name">Your Name</label>
+          <input type="text" id="f-name" placeholder="e.g. Priya Sharma" required />
+        </div>
+        <div class="form-group">
+          <label for="f-email">Email Address</label>
+          <input type="email" id="f-email" placeholder="you@company.com" required />
+        </div>
+        <div class="form-group">
+          <label for="f-subject">Subject</label>
+          <input type="text" id="f-subject" placeholder="Job opportunity / Collaboration" />
+        </div>
+        <div class="form-group">
+          <label for="f-msg">Message</label>
+          <textarea id="f-msg" placeholder="Tell me about the role or what you have in mind..." required></textarea>
+        </div>
+
+        <!-- id="submit-btn" is used by main.js to disable it while sending -->
+        <button type="submit" class="form-submit" id="submit-btn">Send Message ➤</button>
+
+        <!-- id="form-status" is where main.js shows success or error messages -->
+        <div id="form-status"></div>
+      </form>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+<footer>
+  <div class="footer-name">Shaik Faisel Ahmed</div>
+  <p class="footer-copy">
+    Built with HTML · CSS · JavaScript &nbsp;·&nbsp;
+    Made with <span>♥</span> in Bengaluru &nbsp;·&nbsp; 2025
+  </p>
+</footer>
+
+
+<!-- Back to top button (fixed bottom-right) -->
+<button id="back-top" title="Back to top">↑</button>
+
+
+<!-- All JavaScript is in this separate file — loaded last so HTML is ready -->
+<script src="main.js"></script>
+
+
+</body>
+</html>
