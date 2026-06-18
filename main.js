@@ -178,29 +178,6 @@ document.querySelectorAll('.fade-in').forEach(function (el) {
 });
 
 
-/* ============================================================
-   8. GITHUB CONTRIBUTION GRID
-   Draws the decorative grid of colored squares (like GitHub's activity graph).
-   The colors are random — this is visual decoration only, not real data.
-============================================================ */
-var contribGrid = document.getElementById('contrib-grid');
-var totalCells  = 52 * 7; // 52 weeks × 7 days
-
-for (var i = 0; i < totalCells; i++) {
-  var cell = document.createElement('div');
-  cell.className = 'contrib-cell';
-
-  // Randomly assign an activity level (0 = empty, 1-4 = shades of blue)
-  var rand = Math.random();
-  if      (rand > 0.85) cell.setAttribute('data-level', '4');
-  else if (rand > 0.72) cell.setAttribute('data-level', '3');
-  else if (rand > 0.58) cell.setAttribute('data-level', '2');
-  else if (rand > 0.45) cell.setAttribute('data-level', '1');
-  // else leave empty (no data-level attribute)
-
-  contribGrid.appendChild(cell);
-}
-
 
 /* ============================================================
    9. CONTACT FORM — REAL EMAIL DELIVERY VIA FORMSPREE
