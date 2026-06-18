@@ -266,3 +266,41 @@ document.getElementById('contact-form').addEventListener('submit', function (eve
   });
 
 });
+
+
+/* ===== CYBER CANVAS ===== */
+(function(){
+const c=document.getElementById('cyberCanvas');
+if(!c) return;
+const x=c.getContext('2d');
+let w,h,traces=[],drops=[];
+function resize(){
+ w=c.width=innerWidth;
+ h=c.height=innerHeight;
+ traces=Array.from({length:60},()=>({x:Math.random()*w,y:Math.random()*h,h:Math.random()>.5}));
+ drops=Array.from({length:90},()=>({x:Math.random()*w,y:Math.random()*h,s:2+Math.random()*2}));
+}
+addEventListener('resize',resize); resize();
+function draw(){
+ x.clearRect(0,0,w,h);
+ traces.forEach(t=>{
+  x.strokeStyle='rgba(37,99,235,.18)';
+  x.lineWidth=1;
+  x.beginPath();
+  if(t.h){x.moveTo(t.x,t.y);x.lineTo(t.x+120,t.y);}
+  else{x.moveTo(t.x,t.y);x.lineTo(t.x,t.y+120);}
+  x.stroke();
+  x.fillStyle='rgba(16,185,129,.8)';
+  x.fillRect(t.x-1,t.y-1,3,3);
+ });
+ x.fillStyle='rgba(96,165,250,.35)';
+ x.font='12px monospace';
+ drops.forEach(d=>{
+  x.fillText(Math.random()>.5?'1':'0',d.x,d.y);
+  d.y+=d.s;
+  if(d.y>h)d.y=-10;
+ });
+ requestAnimationFrame(draw);
+}
+draw();
+})();
