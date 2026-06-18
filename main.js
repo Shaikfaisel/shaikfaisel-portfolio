@@ -54,24 +54,42 @@ document.getElementById('back-top').addEventListener('click', function () {
    Reads the saved preference from localStorage on page load,
    then toggles between dark and light when the button is clicked.
 ============================================================ */
-var themeBtn = document.getElementById('theme-toggle');
+// Theme Toggle
+const themeBtn = document.getElementById('theme-toggle');
 
-// Apply saved theme when page first loads
-var savedTheme = localStorage.getItem('theme');
-if (savedTheme) {
-  document.documentElement.setAttribute('data-theme', savedTheme);
-  themeBtn.textContent = (savedTheme === 'light') ? '🌙' : '☀️';
+const savedTheme = localStorage.getItem('theme') || 'dark';
+
+document.documentElement.setAttribute('data-theme', savedTheme);
+
+if (themeBtn) {
+    themeBtn.textContent = savedTheme === 'light' ? '🌙' : '☀️';
+
+    themeBtn.addEventListener('click', () => {
+
+        const currentTheme =
+            document.documentElement.getAttribute('data-theme');
+
+        const newTheme =
+            currentTheme === 'dark'
+                ? 'light'
+                : 'dark';
+
+        document.documentElement.setAttribute(
+            'data-theme',
+            newTheme
+        );
+
+        localStorage.setItem(
+            'theme',
+            newTheme
+        );
+
+        themeBtn.textContent =
+            newTheme === 'light'
+                ? '🌙'
+                : '☀️';
+    });
 }
-
-// Toggle theme when button is clicked
-themeBtn.addEventListener('click', function () {
-  var currentTheme = document.documentElement.getAttribute('data-theme');
-  var newTheme = (currentTheme === 'dark') ? 'light' : 'dark';
-  document.documentElement.setAttribute('data-theme', newTheme);
-  themeBtn.textContent = (newTheme === 'light') ? '🌙' : '☀️';
-  localStorage.setItem('theme', newTheme);
-});
-
 
 /* ============================================================
    4. MOBILE HAMBURGER MENU

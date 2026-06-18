@@ -110,6 +110,10 @@ nav {
 }
 #theme-toggle:hover { background: var(--surface2); }
 
+[data-theme="light"] #cyberCanvas {
+    background: #f8fafc;
+}
+
 /* Hamburger button — only shows on mobile */
 .hamburger { display: none; background: none; border: none; cursor: pointer; color: var(--text); font-size: 1.5rem; }
 
@@ -614,4 +618,19 @@ footer {
  color:#10B981;
  font-weight:700;
  margin:10px 0;
+}
+
+/* Light Theme */
+
+[data-theme="light"] {
+    --bg: #f8fafc;
+    --surface: #ffffff;
+    --surface-2: #f1f5f9;
+    --text: #0f172a;
+    --muted: #475569;
+    --border: rgba(0,0,0,0.1);
+}
+
+[data-theme="light"] #cyberCanvas {
+    background: #f8fafc;
 }
