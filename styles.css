@@ -466,34 +466,7 @@ section { padding: 90px 24px; }
 .cert-org  { color: var(--accent2); font-size: 0.8rem; font-weight: 500; margin-bottom: 4px; }
 .cert-date { color: var(--muted); font-size: 0.75rem; font-family: 'JetBrains Mono', monospace; }
 
-/* ============================================================
-   GITHUB ACTIVITY SECTION
-============================================================ */
-.github-stats {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px;
-  margin-bottom: 32px;
-}
-.gh-stat-card {
-  background: var(--surface); border: 1px solid var(--border);
-  border-radius: 14px; padding: 22px; text-align: center;
-}
-.gh-stat-icon  { font-size: 1.5rem; margin-bottom: 8px; }
-.gh-stat-num   { font-family: 'JetBrains Mono', monospace; font-size: 2rem; font-weight: 700; color: var(--accent2); }
-.gh-stat-label { font-size: 0.8rem; color: var(--muted); margin-top: 4px; }
-.contrib-section {
-  background: var(--surface); border: 1px solid var(--border);
-  border-radius: 16px; padding: 28px;
-}
-.contrib-title { font-weight: 600; margin-bottom: 18px; font-size: 0.95rem; }
-.contrib-grid {
-  display: grid; grid-template-columns: repeat(52, 1fr); gap: 3px;
-  overflow-x: auto;
-}
-.contrib-cell { width: 12px; height: 12px; border-radius: 2px; background: var(--surface2); }
-.contrib-cell[data-level="1"] { background: rgba(14,165,233,0.25); }
-.contrib-cell[data-level="2"] { background: rgba(14,165,233,0.5); }
-.contrib-cell[data-level="3"] { background: rgba(14,165,233,0.75); }
-.contrib-cell[data-level="4"] { background: var(--accent2); }
+
 
 /* ============================================================
    CONTACT SECTION
